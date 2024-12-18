@@ -1,0 +1,378 @@
+.home 
+    &-banner
+        &-section 
+            position: relative
+            @include section-padding
+            padding-top: size-pc(40,rem)
+            .content 
+                @media screen and ( min-width: 992px )
+                    margin-right: size-pc(100,rem)
+            .el-bg 
+                position: absolute
+                z-index: 0
+                max-width: size-pc(1000,rem)
+                left: size-pc(-240,rem)
+                top: size-pc(-100,rem)
+            .container
+                position: relative
+                z-index: 2
+        &-img 
+            margin-right: size-pc(-100,rem)
+            -webkit-mask-image: url(../images/mask-1.png)
+            -webkit-mask-size: 100% 100% 
+            -webkit-mask-repeat: no-repeat
+            @media screen and ( max-width: 767.82px )
+                margin-right: size-pc(0,rem)
+                
+            .thumb-img 
+                overflow: hidden
+                @include thumb-img(55%,cover)
+.about
+    &-section 
+        @include section-padding 
+        .content 
+            @media screen and ( min-width: 992px )
+                padding-left: size-pc(60,rem)
+        .el-bg 
+            position: absolute
+            z-index: 0
+            width: 40%
+            max-width: size-pc(500,rem)
+            bottom: size-pc(-150,rem)
+            right: size-pc(-50,rem)
+            text-align: right
+        .container
+            position: relative
+            z-index: 2   
+    &-img 
+        position: relative
+        padding-bottom: 80%
+        .img
+            &-1,&-2
+                position: absolute
+                -webkit-mask-image: url(../images/mask-3.png)
+                -webkit-mask-size: 100% 100% 
+                -webkit-mask-repeat: no-repeat
+                img 
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    object-fit: cover
+            &-1
+                left: 0
+                width: 40%
+                bottom: 7%
+                top: 30%
+            &-2 
+                right: 0
+                width: 59%
+                top: 0
+                bottom: 0
+.collection
+    &-section 
+        @include section-padding
+        .content 
+            margin-bottom: size-pc(100,rem)
+            @media screen and ( max-width: 767.82px )
+                margin-bottom: size-pc(60,rem)
+                
+    &-item 
+        display: flex
+        width: 100%
+        flex-direction: column
+        position: relative
+        padding: size-pc(40,rem)
+        row-gap: size-pc(20,rem)
+        transition: all .3s ease
+        border: 1px solid transparent
+        border-radius: 10px
+        @include mobile-md
+            padding: size-pc(30,rem)
+        @include mobile-sm
+            padding: size-pc(20,rem)
+        &:hover 
+            background: rgba(#0B415E,0.04)
+            border-color: rgba(#0B415E,0.2)
+            .collection-link 
+                opacity: 1
+                visibility: visible
+    &-img 
+        @include thumb-img(100%,contain)
+    &-content 
+        text-align: center
+        h3 
+            font-size: size-pc(45,rem)
+            @include mobile-md
+                font-size: size-pc(38,rem)
+            @include mobile-sm
+                font-size: size-pc(30,rem)
+    &-link 
+        position: absolute
+        z-index: 10
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: all .3s ease
+        opacity: 0
+        visibility: hidden
+.video 
+    &-section 
+        @include section-padding
+        .container 
+            z-index: 2
+            position: relative
+        .el-bg 
+            position: absolute
+            max-width: size-pc(600,rem)
+            width: 50%
+            bottom: size-pc(-20,rem)
+            right: size-pc(-150,rem)
+            text-align: right
+    &-thumb 
+        position: relative
+        -webkit-mask-image: url(../images/mask-1.png)
+        -webkit-mask-size: 100% 100% 
+        -webkit-mask-repeat: no-repeat
+        padding-bottom: 40%
+        z-index: 5
+        margin-bottom: size-pc(100,rem)
+        @media screen and ( max-width: 767.82px )
+            margin-bottom: size-pc(60,rem)
+        img 
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            object-fit: cover
+            z-index: 1
+            // pointer-events: auto
+        iframe,video 
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            object-fit: cover
+            pointer-events: auto
+        > a 
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            z-index: 10
+            display: flex
+            padding: size-pc(50,rem)
+            align-items: center
+            justify-content: center
+            font-size: size-pc(150,rem)
+            color: #ff0033
+            animation-name: fa-ani
+            animation-delay: var(--fa-animation-delay,0s)
+            animation-direction: var(--fa-animation-direction,normal)
+            animation-duration: var(--fa-animation-duration,1s)
+            animation-iteration-count: var(--fa-animation-iteration-count,infinite)
+            animation-timing-function: var(--fa-animation-timing,ease-in-out)
+            animation-play-state: paused
+            &:hover 
+                animation-play-state: running
+            // @media (prefers-reduced-motion:reduce)
+            //     animation-delay: -1ms
+            //     animation-duration: 1ms
+            //     animation-iteration-count: 1
+            //     transition-delay: 0s
+            //     transition-duration: 0s
+@keyframes fa-ani
+    0%,90% 
+        transform: scale(1)
+    45% 
+        transform: scale(1.25)
+.voucher
+    &-section
+        @include section-padding
+        .content 
+            position: relative
+            .el-bg 
+                position: absolute
+                z-index: 0
+                top: 0
+                width: 100%
+                left: 0
+    &-img 
+        -webkit-mask-image: url(../images/mask-3.png)
+        -webkit-mask-size: 100% 100% 
+        -webkit-mask-repeat: no-repeat
+        &.__1 
+            margin-left: size-pc(-100,rem)
+            margin-right: size-pc(100,rem)
+            @media screen and ( max-width: 767.82px )
+                margin-left: 0
+                margin-right: 0
+                
+        &.__2
+            margin-right: size-pc(-100,rem)
+            margin-left: size-pc(100,rem)
+            @media screen and ( max-width: 767.82px )
+                margin-left: 0
+                margin-right: 0
+        .thumb-img 
+            @include thumb-img(130%,cover)
+.enjoy
+    &-section 
+        @include section-padding
+        .content 
+            @media screen and ( min-width: 992px )
+                padding-right: size-pc(100,rem)
+                h2 
+                    padding-right: size-pc(150,rem)
+                
+    &-img 
+        position: relative
+        padding-bottom: 100%
+        .el-bg 
+            position: absolute
+            z-index: 2
+            bottom: 0
+            left: 30%
+            top: 5%
+            right: 0%
+            img 
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                object-fit: contain
+        .img 
+            &-1,&-2 
+                position: absolute
+                z-index: 3
+                -webkit-mask-image: url(../images/mask-3.png)
+                -webkit-mask-size: 100% 100% 
+                -webkit-mask-repeat: no-repeat
+                img 
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    object-fit: cover
+            &-1
+                top: 0
+                left: 0
+                width: 65%
+                bottom: 30%
+
+            &-2 
+                bottom: 10%
+                top: 40%
+                right: 0
+                width: 30%
+.newsletter
+    &-section
+
+    &-img 
+        position: relative
+        
+       
+        overflow: hidden
+        margin-left: size-pc(-120,rem)
+        margin-right: size-pc(-120,rem)
+        border-radius: 0px
+        -webkit-mask-image: url(../images/mask-1.png)
+        -webkit-mask-size: 100% 100% 
+        -webkit-mask-repeat: no-repeat
+        padding: 0 size-pc(50,rem)
+        @media screen and ( max-width: 991.82px )
+            margin-left: size-pc(-70,rem)
+            margin-right: size-pc(-70,rem)
+        @media screen and ( max-width: 767.82px )
+            margin-right: size-pc(-50,rem)
+            margin-left: size-pc(-50,rem)
+        .has-parallax
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            img 
+                top: -10%
+                height: 120%
+    &-box 
+        
+    &-wrapper
+        position: relative
+        z-index: 2
+        padding: size-pc(100,rem) size-pc(20,rem)
+        max-width: size-pc(1400,rem)
+        margin: size-pc(150,rem) auto
+        background-color: $color-bg
+        background-image: url(../images/bg-pattern.png)
+        background-repeat: repeat
+        -webkit-mask-image: url(../images/mask-1.png)
+        -webkit-mask-size: 100% 100% 
+        -webkit-mask-repeat: no-repeat
+        @media screen and ( max-width: 767.82px )
+            margin: size-pc(100,rem) auto
+            padding: size-pc(50,rem) size-pc(20,rem)
+        .content
+            h3 
+                font-style: italic
+                text-transform: none
+                letter-spacing: normal
+    &-el 
+        width: size-pc(350,rem)
+        height: size-pc(350,rem)
+        position: absolute
+        top: 3%
+        left: 1%
+        @media screen and ( max-width: 767.82px )
+            width: size-pc(200,rem)
+            height: size-pc(200,rem)
+        &-1,&-2
+            position: absolute
+            z-index: 0
+            
+        &-1
+            width: size-pc(350,rem)
+            top: 0
+            left: 0
+            @media screen and ( max-width: 767.82px )
+                width: size-pc(250,rem)
+        &-2 
+            width: size-pc(350,rem)
+            
+            bottom: 0
+            right: 0
+            @media screen and ( max-width: 767.82px )
+                width: size-pc(250,rem)
+            
+    &-inner
+        max-width: size-pc(800,rem)
+        margin: auto
+    &-form
+        display: flex
+        width: 100%
+        column-gap: 10px
+        margin-top: size-pc(70,rem)
+        @media screen and ( max-width: 767.82px )
+            margin-top: size-pc(40,rem)
+        input
+            &[type='email']
+                
+                width: 100%
+                border: 1px solid $color-primary
+                background-color: unset 
+                border-radius: 10px
+                padding: size-pc(20,rem)
+                margin-bottom: size-pc(0,rem)
+                &::placeholder
+                    
+                    opacity: 60%

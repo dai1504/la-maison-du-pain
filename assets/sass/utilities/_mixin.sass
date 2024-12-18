@@ -1,0 +1,71 @@
+@mixin full()
+  @media (min-width: $design_pc_size+'px')
+    @content
+@mixin pc()
+  @media (max-width: $design_pc_size+'px') 
+    @content
+@mixin sp()
+  @media (max-width: 1023px)
+    @content
+@mixin placeholder()
+  &::-webkit-input-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+
+/* Set các giá trị với màn hình tương ứng */
+$mobile-width: 480px
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin mobile-sm
+  @media screen and ( max-width: 575.82px )
+    @content
+@mixin mobile-md
+  @media screen and ( max-width: 767.82px )
+    @content
+@mixin table-sm
+  @media screen and ( max-width: 991.82px )
+    @content
+@mixin table-md
+  @media screen and ( max-width: 1024.82px )
+    @content
+@mixin table-xl
+  @media screen and ( max-width: 1199.82px )
+    @content
+
+@mixin thumb_img($pb, $ob-fit)
+  position: relative
+  padding-bottom: $pb
+  img
+    // transition: all .3s ease
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    object-fit: $ob-fit
+  
+@mixin menu-style 
+  display: block
+  width: fit-content
+  // text-align: center
+  color: $color-link-menu
+  white-space: nowrap
+  margin: auto
+  padding: size-pc(20, rem) size-pc(0, rem)
+  font-weight: 600
+  font-size: size-pc(24, rem)
+  font-family: $font-link
+  &:hover 
+      color: $color-2
+@mixin section-padding
+  padding: size-pc(100,rem) 0 
+  @media screen and ( max-width: 767.82px )
+    padding: size-pc(60,rem) 0 
+  @media screen and ( max-width: 575.82px )
+    padding: size-pc(40,rem) 0 
